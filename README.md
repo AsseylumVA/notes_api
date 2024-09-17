@@ -9,7 +9,7 @@
 
 Клонировать репозиторий и перейти в него в командной строке:
 
-``` git@github.com:asseylumva/notes_api.git ``` 
+``` git clone git@github.com:AsseylumVA/notes_api.git ``` 
 ``` cd notes_api/ ``` 
 
 Создать .env файл:
