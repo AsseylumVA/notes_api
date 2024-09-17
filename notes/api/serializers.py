@@ -1,7 +1,7 @@
+from pyaspeller import YandexSpeller
 from rest_framework import serializers
-from rest_framework.generics import get_object_or_404
 
-from models import Note
+from .models import Note
 
 
 class NoteSerializer(serializers.ModelSerializer):
@@ -10,6 +10,11 @@ class NoteSerializer(serializers.ModelSerializer):
         slug_field='username',
         read_only=True,
     )
+
+    def validate_text(self, value):
+        speller = YandexSpeller()
+        value = speller.spelled(value)
+        return value
 
     class Meta:
         model = Note

@@ -10,9 +10,8 @@ class Note(models.Model):
         on_delete=models.CASCADE,
         related_name='notes'
     )
-    text = models.TextField
+    text = models.TextField()
     pub_date = models.DateTimeField(
-        'Дата публикации',
         auto_now_add=True,
         db_index=True
     )
