@@ -12,9 +12,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}",
+					"raw": "{{host}}/api/v1/notes/",
 					"host": [
 						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes",
+						""
 					]
 				}
 			},
@@ -27,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"test text\"\r\n}",
+					"raw": "{\r\n    \"text\": \"СлоМаныйЦЦй ТиeксТ\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,16 +41,22 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}",
+					"raw": "{{host}}/api/v1/notes/",
 					"host": [
 						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes",
+						""
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "list test user",
+			"name": "list invalid user",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -64,16 +76,22 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}",
+					"raw": "{{host}}/api/v1/notes/",
 					"host": [
 						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes",
+						""
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "create test user",
+			"name": "create invalid user",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -102,9 +120,15 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}",
+					"raw": "{{host}}/api/v1/notes/",
 					"host": [
 						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"notes",
+						""
 					]
 				}
 			},
@@ -149,17 +173,17 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "localhost:8000/api/v1/notes/",
+			"value": "localhost:8000",
 			"type": "string"
 		},
 		{
 			"key": "username",
-			"value": "",
+			"value": "admin",
 			"type": "string"
 		},
 		{
 			"key": "password",
-			"value": "",
+			"value": "mysecretpassword",
 			"type": "string"
 		}
 	]
