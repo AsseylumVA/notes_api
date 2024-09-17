@@ -17,7 +17,7 @@ class Note(models.Model):
     )
 
     class Meta:
-        ordering = ('pub_date',)
+        ordering = ('-pub_date',)
         verbose_name = 'Заметка'
         verbose_name_plural = 'Заметки'
 

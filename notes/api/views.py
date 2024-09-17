@@ -1,15 +1,10 @@
-from rest_framework import mixins, viewsets
+from rest_framework import generics, viewsets
 
 from .serializers import NoteSerializer
 
 
-class ListCreateViewSet(mixins.ListModelMixin,
-                        mixins.CreateModelMixin,
-                        viewsets.GenericViewSet):
-    pass
-
-
-class NoteViewSet(ListCreateViewSet):
+class NoteViewSet(generics.ListCreateAPIView,
+                  viewsets.GenericViewSet):
     serializer_class = NoteSerializer
 
     def get_queryset(self):
