@@ -9,7 +9,8 @@
 
 Клонировать репозиторий и перейти в него в командной строке:
 
-``` git clone git@github.com:AsseylumVA/notes_api.git ``` 
+``` git@github.com:asseylumva/notes_api.git ``` 
+
 ``` cd notes_api/ ``` 
 
 Создать .env файл:
@@ -28,7 +29,6 @@ DJANGO_SUPERUSER_USERNAME=admin
 
 ```
 docker compose up
-
 ```
 
 Api будет доступно по ссылке:
