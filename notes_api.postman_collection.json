@@ -8,131 +8,243 @@
 	"item": [
 		{
 			"name": "list",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/v1/notes/",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"notes",
-						""
-					]
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list test_user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{test_user_pass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{test_user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list invalid user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "invalid",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "testpass1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list unauthorized",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "create",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"СлоМаныйЦЦй ТиeксТ\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{host}}/api/v1/notes/",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"notes",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "list invalid user",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "testpass1",
-							"type": "string"
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"СлоМаныйЦЦй ТиeксТ 321312\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "username",
-							"value": "test_user1",
-							"type": "string"
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/v1/notes/",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"notes",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create invalid user",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "testpass1",
-							"type": "string"
+				{
+					"name": "create test_user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{test_user_pass}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{test_user}}",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "username",
-							"value": "test_user1",
-							"type": "string"
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"СлоМаныйЦЦй ТиeксТ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"text\": \"СлоМаныйЦЦй ТиeксТ\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "create invalid user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "invalid",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "testpass1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"СлоМаныйЦЦй ТиeксТ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/notes/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notes",
+								""
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "{{host}}/api/v1/notes/",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"notes",
-						""
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	],
 	"auth": {
@@ -184,6 +296,26 @@
 		{
 			"key": "password",
 			"value": "mysecretpassword",
+			"type": "string"
+		},
+		{
+			"key": "test_user",
+			"value": "test1",
+			"type": "string"
+		},
+		{
+			"key": "test_user_pass",
+			"value": "superpass1",
+			"type": "string"
+		},
+		{
+			"key": "test_user_2",
+			"value": "test2",
+			"type": "string"
+		},
+		{
+			"key": "test_user_2_pass",
+			"value": "superpass2",
 			"type": "string"
 		}
 	]

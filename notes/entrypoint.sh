@@ -5,6 +5,9 @@
 python manage.py makemigrations
 python manage.py migrate
 
+# Load test users
+python manage.py loaddata user.json
+
 #create superuser
 if [ "$DJANGO_SUPERUSER_USERNAME" ]
 then
