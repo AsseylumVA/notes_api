@@ -47,6 +47,11 @@ http://localhost:8000/admin/
 notes_api.postman_collection.json
 ```
 
+Так же доступна документация по ссылке:
+```
+http://localhost:8000/api/v1/docs/
+```
+
 ### Автор проекта
 
 **AsseylumVA**
