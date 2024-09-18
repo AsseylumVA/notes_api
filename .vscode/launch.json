@@ -6,15 +6,15 @@
     "configurations": [
         
         {
-            "name": "Отладчик Python: Django",
-            "type": "debugpy",
+            "name": "Python: Django Debug Single Test",
+            "type": "python",
             "request": "launch",
+            "program": "${workspaceFolder}/notes/manage.py",
             "args": [
-                "runserver"
+                "test",
+                "notes"
             ],
-            "django": true,
-            "autoStartBrowser": false,
-            "program": "${workspaceFolder}\\notes\\manage.py"
-        }
+            "django": true
+        },
     ]
 }
