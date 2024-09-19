@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase, Client
+from django.test import TestCase, Client, override_settings
 
 from ..models import Note
 
@@ -8,6 +8,7 @@ Path = "/api/v1/notes/"
 
 
 class UrlTests(TestCase):
+
     @classmethod
     def setUpClass(cls) -> None:
         super().setUpClass()
