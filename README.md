@@ -52,6 +52,11 @@ notes_api.postman_collection.json
 http://localhost:8000/api/v1/docs/
 ```
 
+Для запуска django test использовать команду:
+```
+python manage.py test --settings api.tests.settings
+```
+
 ### Автор проекта
 
 **AsseylumVA**

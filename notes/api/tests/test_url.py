@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase, Client, override_settings
+from django.test import TestCase, Client
+from unittest.mock import MagicMock, patch
 
 from ..models import Note
 
@@ -47,9 +48,15 @@ class UrlTests(TestCase):
         for n in response_json.get("results"):
             self.assertEqual(n["author"], self.user.username)
 
-    def test_YandexSpeller(self):
+    @patch("api.serializers.YandexSpeller")
+    def test_YandexSpeller(self, mock: MagicMock):
+        mock.return_value = mock
+        mock.spelled.return_value = "Сломанный Текст"
         response = self.client.post(Path, {"text": "СлоМайНый Текуст"})
         self.assertEqual(response.status_code, 201)
 
         response_json = response.json()
         self.assertEqual(response_json.get("text"), "Сломанный Текст")
+
+        mock.assert_called_with()
+        mock.spelled.assert_called_with("СлоМайНый Текуст")
